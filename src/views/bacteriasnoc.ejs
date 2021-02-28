@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Crud proyect </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <a href="/" class = "navbar-brand">Bacterias nocivas para el cuerpo</a>
+        <a href="/contenido" class = "navbar-brand"> volver </a>
+
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h1 class="display-4">Añade y edita a tu gusto</h1><br><br>
+        
+    <div class="container">
+        <div class="row">
+
+        <div class="col-md-5">
+         <div class="card">
+             <div class="card-body">
+                 <form action="/addb" method="POST">
+                     <div class="form-group">
+                         <input type="text" name="nombrebac" placeholder="nombres de la bacteria" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <input type="text" name="familia" placeholder="familia" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nombrecientifico" placeholder="nombre cientifico" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="ataca" placeholder="que ataca" class="form-control">
+                    </div>
+                     
+                    
+                    
+                     <div class="form-group">
+                    </div>
+                    <button type="submit" class="btn btn-success btn-block">añadir</button>
+                    
+                 </form>
+             </div>
+         </div>
+        </div>    
+        <br>
+        <br>
+
+
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+               <thead>
+                 <tr>
+                     <th>indice</th>
+                     <th>nombres de bacteria</th>
+                     <th>familia</th>
+                     <th>nombre cientifico</th>
+                     <th>¿que ataca?</th>
+                     <th>opciones</th>
+
+                
+                 </tr>
+               </thead>
+               <tbody>
+                   <% for (var i = 0; i < tasks.length; i++) { %>
+                    <tr>
+                        <td><%=i + 1 %> </td>
+                        <td><%= tasks[i]. nombrebac %> </td>
+                        <td><%= tasks[i]. familia %> </td>
+                        <td><%= tasks[i]. nombrecientifico %> </td>
+                        <td><%= tasks[i]. ataca %> </td>
+
+
+
+                        <td>
+                          <a href="/deleteb/<%= tasks[i]._id%>" class="btn btn-success btn-block">eliminar</a>  
+                          <a href="/editarb/<%= tasks[i]._id%> " class="btn btn-success btn-block">editar</a>  
+
+                        </td>
+
+                    </tr>
+                   <% } %> 
+               </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

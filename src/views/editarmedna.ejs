@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-success mb-4">
+        <a href="/" class = "navbar-brand">Medicamentos Naturales</a>
+    </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/editarr/<%= tasks._id%> " method="POST">
+                        <div class="form-group">
+                            <input type="text" name="medicamento" placeholder="inserte nombre de medicamento" class="form-control" value="<%= tasks.medicamento %> ">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" name="clasificacion" placeholder="clasificacion del medicamento" class="form-control"value="<%= tasks.clasificacion %> ">
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="via" placeholder="via de administracion" class="form-control"value="<%= tasks.via %> ">
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="vida" placeholder="via de administracion secundaria" class="form-control"value="<%= tasks.vida %> ">
+                       </div>
+                       
+                        <div class="form-group">
+                       </div>
+                       <button type="submit" class="btn btn-success btn-block">editar</button>
+                       
+                    </form>
+                </div>
+            </div>
+           </div>    
+    </div>
+</div>

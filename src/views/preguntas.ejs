@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Crud proyect </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <a href="/paginaprincipal" class = "navbar-brand">Preguntas Frecuentes</a>
+        <a href="/contenido" class = "navbar-brand"> volver </a>
+
+    </nav>
+    <div class="jumbotron jumbotron-fluid text-center">
+        <div class="container">
+          <h1 class="display-4">Añade y edita a tu gusto</h1><br><br>
+          
+  
+
+    <div class="container">
+        <div class="row">
+
+        <div class="col-md-5">
+         <div class="card">
+             <div class="card-body">
+                 <form action="/addp" method="POST">
+                     <div class="form-group">
+                         <input type="text" name="usuario" placeholder="inserte nombre de usuario" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <input type="text" name="cedula" placeholder="numero de CC" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="apellidos" placeholder="inserte apellido" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="pregunta" placeholder="inserte pregunta" class="form-control">
+                    </div>
+                    
+                    
+                    
+                     <div class="form-group">
+                    </div>
+                    <button type="submit" class="btn btn-info btn-block">añadir</button>
+                    
+                 </form>
+             </div>
+         </div>
+        </div>
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+               <thead>
+                 <tr>
+                     <th>indice</th>
+                     <th>usuario</th>
+                     <th>cedula</th>
+                     <th>apellidos</th>
+                     <th>pregunta</th>
+                     <th>opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i = 0; i < tasks.length; i++) { %>
+                     <tr>
+                         <td><%=i + 1 %> </td>
+                         <td><%= tasks[i]. usuario %> </td>
+                         <td><%= tasks[i]. cedula %> </td>
+                         <td><%= tasks[i]. apellidos %> </td>
+                         <td><%= tasks[i]. pregunta %> </td>
+
+                         <td>
+                            <a href="/deletep/<%= tasks[i]._id%>" class="btn btn-info btn-block">eliminar</a>  
+                            <a href="/editarp/<%= tasks[i]._id%> " class="btn btn-dark btn-block">editar</a>  
+  
+                          </td>
+  
+                      </tr>
+                     <% } %> 
+                 </tbody>
+</html>

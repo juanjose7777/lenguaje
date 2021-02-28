@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Crud proyect </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-danger mb-4">
+        <a href="/" class = "navbar-brand">Enfermedades letales del cuerpo humano</a>
+        <a href="/contenido" class = "navbar-brand"> volver </a>
+
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid text-center ">
+        <div class="container">
+          <h1 class="display-4">Añade y edita a tu gusto</h1><br><br>
+        
+    <div class="container">
+        <div class="row">
+
+        <div class="col-md-5">
+         <div class="card">
+             <div class="card-body">
+                 <form action="/adde" method="POST">
+                     <div class="form-group">
+                         <input type="text" name="nombreenfermedad" placeholder="nombres de la enfermedad" class="form-control">
+                     </div>
+                     <div class="form-group">
+                        <input type="text" name="causante" placeholder="¿que la causa?" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="contagioso" placeholder="¿es contagioso?" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="queataca" placeholder="que ataca" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="comoevitar" placeholder="como se evita" class="form-control">
+                    </div>
+                     
+                    
+                    
+                     <div class="form-group">
+                    </div>
+                    <button type="submit" class="btn btn-dark btn-block">añadir</button>
+                    
+                 </form>
+             </div>
+         </div>
+        </div>    
+        <br>
+        <br>
+
+
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+               <thead>
+                 <tr>
+                     <th>indice</th>
+                     <th>nombres de la enfermedad</th>
+                     <th>que la causa</th>
+                     <th>¿es contagioso?[si/no]</th>
+                     <th>¿que ataca?</th>
+                     <th>¿como evitar?</th>
+
+                     <th>opciones</th>
+
+                
+                 </tr>
+               </thead>
+               <tbody>
+                   <% for (var i = 0; i < tasks.length; i++) { %>
+                    <tr>
+                        <td><%=i + 1 %> </td>
+                        <td><%= tasks[i]. nombreenfermedad %> </td>
+                        <td><%= tasks[i]. causante %> </td>
+                        <td><%= tasks[i]. contagioso %> </td>
+                        <td><%= tasks[i]. queataca %> </td>
+                        <td><%= tasks[i]. comoevitar %> </td>
+
+
+
+
+                        <td>
+                          <a href="/deletee/<%= tasks[i]._id%>" class="btn btn-danger btn-block">eliminar</a>  
+                          <a href="/editare/<%= tasks[i]._id%> " class="btn btn-dark btn-block">editar</a>  
+
+                        </td>
+
+                    </tr>
+                   <% } %> 
+               </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

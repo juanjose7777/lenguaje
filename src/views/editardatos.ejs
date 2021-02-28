@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-primary mb-4">
+        <a href="/" class = "navbar-brand">edita los usuarios</a>
+    </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/editard/<%= tasks._id%> " method="POST">
+                        <div class="form-group">
+                            <input type="text" name="nombres" placeholder="inserte nombre de medicamento" class="form-control" value="<%= tasks.nombres %> ">
+                        </div>
+                        <div class="form-group">
+                           <input type="text" name="numerocel" placeholder="clasificacion del medicamento" class="form-control"value="<%= tasks.numerocel %> ">
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="apellido" placeholder="via de administracion" class="form-control"value="<%= tasks.apellido %> ">
+                       </div>
+                       <div class="form-group">
+                           <input type="text" name="correo" placeholder="via de administracion" class="form-control"value="<%= tasks.correo %> ">
+                       </div>
+                       <div class="form-group">
+                        <input type="text" name="problemassalud" placeholder="via de administracion" class="form-control"value="<%= tasks.problemassalud %> ">
+                    </div>
+                       
+                        <div class="form-group">
+                       </div>
+                       <button type="submit" class="btn btn-primary btn-block">editar</button>
+                       
+                    </form>
+                </div>
+            </div>
+           </div>    
+    </div>
+</div>
